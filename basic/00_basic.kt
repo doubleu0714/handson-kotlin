@@ -4,21 +4,19 @@ package io.doubleu0714.kotlin
 // 메인 함수
 fun main(args: Array<String>) {
     println("Hello world!")
-    println("function1 is called!!!====================")
-    println(function1(1, 2))
-    println("function2 is called!!!====================")
-    println(function2(1, 2))
-    println("function3 is called!!!====================")
-    println(function3(1, 2))
-    println("function4 is called!!!====================")
-    println(function4(1, 2))
-    println("function5 is called!!!====================")
+    println("function1(1, 2) = ${function1(1, 2)}")
+    println("function2(1, 2) = ${function2(1, 2)}")
+    println("function3(1, 2) = ${function3(1, 2)}")
+    println("function4(1, 2) = ${function4(1, 2)}")
+    println("function2(1, 2) = ${function2(1, 2)}")
     // 디폴트 값이 설정 되어있어서 인자값을 안넣어 주어도 실행가능
-    println(function5())
+    println("function5() = ${function5()}")
     // 맨 앞 파라미터에 인자값이 설정되고 그 뒤의 파라미터는 디폴트 값으로 설정됨
-    println(function5(5))
-    println("localVariable is called!!!====================")
-    localVariable()
+    println("function5(5) = ${function5(5)}")
+    // 인자값을 명시적으로 표현할 수 있다.
+    println("function5(b=5) = ${function5(b=5)}")
+    println("function6(Hi) = ${function6(b="HI")}")
+    println("localVariable = ${localVariable()}")
     // 함수의 파라미터는 val 인듯..파라미터에 대해서 reassign을 할 수가 없음.
     // topLevelVarTest(topLevelVar)
     println("topLevelVariable is called!!!====================")
@@ -70,7 +68,12 @@ fun function4(a: Int, b: Int) {
 
 // 파라미터에 디폴트 값을 설정
 fun function5(a: Int = 10, b: Int = 100) {
-    println("sum of $a and $b is ${a + b}")
+    println("a = $a, b = $b")
+}
+
+// 파라미터에 디폴트 값을 설정
+fun function6(a: Int = 10, b: String = "Test") {
+    println("a = $a, b = $b")
 }
 
 // Top Level 변수
